@@ -323,12 +323,51 @@ h1 {
  .focus--mask-inner {
      animation: mask-inner-move 1s linear infinite alternate;
  }
- .page1 {
-     opacity: 0;
-     animation: show 1s infinite 10.2s , hide 1s infinite 14s;
-     text-align: center;
+.page1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* This ensures the page takes full viewport height */
+    text-align: center;
+    opacity: 0;
+    animation: show 1s infinite 10.2s, hide 1s infinite 14s;
+}
 
- }
+.anim {
+    transform: translate(0, 0);
+}
+
+.focus, .focus2, .focus3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.2rem;
+    line-height: 1;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px; /* space between the words */
+}
+
+.focus--mask {
+    display: inline-block;
+    position: relative;
+}
+
+.focus--mask-inner {
+    display: inline-block;
+    animation: mask-move 1s linear infinite alternate;
+}
+
+@keyframes mask-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(129px);
+    }
+}
+
  @keyframes show {
      from {
          opacity: 1;
@@ -731,8 +770,8 @@ a.author{
 <div class="feliz">Happy new year</div>
 <div class="ano_novo">
   <span>20</span>
-  <span class="seis">23</span>
-  <span class="sete">24</span>
+  <span class="seis">24</span>
+  <span class="sete">25</span>
   <div class="balao"></div>
 </div>
 <div class="fogos">
